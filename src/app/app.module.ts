@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { counterReducer } from './store/counter.reducer';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, ReactiveFormComponent],
+  declarations: [AppComponent, MyCounterComponent, ReactiveFormComponent, ChildComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
