@@ -2,7 +2,7 @@
   <span>{{ item.name }} </span>
   <span>{{ item.price }} </span>
 </div>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<!-- <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
   <div>
     <label>Name</label>
     <input type="text" formControlName="name" />
@@ -13,10 +13,21 @@
   </div>
 
   <button class="button" type="submit">Purchase</button>
-</form>
+</form> -->
+<form [formGroup]="passwordForm" (ngSubmit)="onSubmit2(passwordForm)">
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="password" />
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="text" formControlName="confirmPassword" />
+  </div>
+  <div class="error" *ngIf="passwordError">
+    Passsword and ConfirmPassword didn't match.
+  </div>
 
-<label>
-  Name:
-  <input type="text" [formControl]="name" />
-</label>
-<p>Value: {{ name.value }}</p>
+  <button class="button" type="submit" [disabled]="passwordForm.invalid">
+    Purchase
+  </button>
+</form>
