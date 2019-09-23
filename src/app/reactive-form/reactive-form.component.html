@@ -14,7 +14,7 @@
 
   <button class="button" type="submit">Purchase</button>
 </form> -->
-<form [formGroup]="passwordForm" (ngSubmit)="onSubmit2(passwordForm)">
+<!-- <form [formGroup]="passwordForm" (ngSubmit)="onSubmit2(passwordForm)">
   <div>
     <label>Name</label>
     <input type="text" formControlName="password" />
@@ -28,6 +28,38 @@
   </div>
 
   <button class="button" type="submit" [disabled]="passwordForm.invalid">
+    Purchase
+  </button>
+</form> -->
+
+<form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="checkbox" formControlName="price" value="value-1" />
+  </div>
+  <div>
+    <span formArrayName="musicPreferences">
+      <label
+        *ngFor="
+          let musicPreference of ngForm.controls.musicPreferences.controls;
+          let i = index
+        "
+      >
+        <input
+          type="checkbox"
+          [name]="musicGenre[i].genre"
+          [value]="musicGenre[i].genre"
+          [formControlName]="i"
+        />
+        {{ musicGenre[i].genre }}
+      </label>
+    </span>
+  </div>
+  <button class="button" type="submit">
     Purchase
   </button>
 </form>
