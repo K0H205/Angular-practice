@@ -1,0 +1,14 @@
+<form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <span formArrayName="animals">
+      <label *ngFor="let _ of ngForm.controls.animals.controls; let i = index">
+        <input type="checkbox" [formControlName]="i" />
+        {{ animalsOption[i].label }}
+      </label>
+    </span>
+  </div>
+  <button class="button" type="submit">
+    Show Value!
+  </button>
+  <h4>form1 value -> {{ showValue }}</h4>
+</form>

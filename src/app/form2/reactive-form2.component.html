@@ -1,0 +1,12 @@
+<form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label *ngFor="let option of animalsOption">
+      <input type="checkbox" (change)="onChange(option.value)" />
+      {{ option.label }}
+    </label>
+  </div>
+  <button class="button" type="submit">
+    Show Value!
+  </button>
+  <h4>form2 value -> {{ showValue }}</h4>
+</form>
