@@ -1,0 +1,9 @@
+<form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name</label>
+    <input type="range" formControlName="name" min="0" max="1000" step="10" />
+  </div>
+  <button class="button" type="submit">
+    Purchase
+  </button>
+</form>
